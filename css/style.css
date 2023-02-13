@@ -1,0 +1,111 @@
+/* dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+   */
+  /* Dropdown button on hover & focus */
+  /* .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  } */
+  .pop-up{
+    transform: translate(-50%, -50%) scale(0.1);
+    transform: translate(-50%, -50%) scale(0.1);
+    top: 50%;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+  }
+
+  .open-popup{
+    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    visibility: visible;
+
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+.test > div{
+    border: 1px solid black;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.primary-color{
+    color: #c804fc;
+}
+
+.bg-primary{
+    background-color: #c804fc;
+}
+
+.signin-button > button{
+    border-radius: 0.2rem;
+}
+
+.top-right{
+    border-bottom: 1px solid #8c8c8c;
+}
+
+.media-right-container{
+    border-right: 1px solid #8c8c8c;
+}
+
+.media-top  div, .media-content > .grid  div{
+    cursor: pointer;
+}
+
+
+@media(max-width: 1024px) {
+    .image-container{
+        display: none;
+    }
+}
+
+@media(max-width: 640px){
+    .sm\:w-3\/5 {
+        width: 100%;
+    }
+
+    .form-group > input{
+        width: 100%
+    }
+}
+
+/* .signup-container{
+    width: 
+} */
