@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      .test > div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+      <div class="grid grid-cols-6 test">
+        <div class="col-start-1 col-span-4 ...">01</div>
+        <div class="col-start-1 col-end-3 ...">02</div>
+        <div class="col-start-3 col-end-7 col-span-2 ...">03</div>
+        <div class="col-start-1 col-end-7 ...">04</div>
+      </div>
+          
+        
+    </header>
+
+    <div>
+        <form class="flex items-center space-x-6">
+            <div class="shrink-0">
+              <img class="h-16 w-16 object-cover rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80" alt="Current profile photo" />
+            </div>
+            <label class="relative block">
+                <span class="sr-only">Search</span>
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"><!-- ... --></svg>
+                </span>
+                <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search"/>
+              </label>
+          </form>
+    </div>
+</body>
+</html>
