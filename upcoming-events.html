@@ -189,20 +189,20 @@
                 <div class="p-10">
                     <div class="flex pb-7">
                         <div>
-                            <p class="text-lg font-medium tracking-wide leading-relaxed text-black pointer" id="comm" onclick="handleCommunities()">Upcoming Events (3)</p>
+                            <p class="text-lg font-medium tracking-wide leading-relaxed text-black pointer" id="comm" onclick="handleUpcomingEvent()">Upcoming Events (3)</p>
                         </div>
                         <div class="ml-5">
-                            <p class="text-lg font-medium tracking-wide leading-relaxed text-gray-500 pointer" onclick="handleDeletedCommunities()" id="deletedcomm">Announcements (3)</p>
+                            <p class="text-lg font-medium tracking-wide leading-relaxed text-gray-500 pointer" onclick="handleAnnouncement()" id="deletedcomm">Announcements (3)</p>
                         </div>
                         <div class="ml-5">
-                            <p class="text-lg font-medium tracking-wide leading-relaxed text-gray-500 pointer" onclick="handleDeletedevents()" id="deletedcomm">Delete Events</p>
+                            <p class="text-lg font-medium tracking-wide leading-relaxed text-gray-500 pointer" onclick="handleDeletedEvents()" id="deletedevent">Delete Events</p>
                         </div>
                         <div class="inline-flex items-center justify-center w-44 h-10 px-6 py-2.5 bg-gray-100 rounded ml-auto mr-40 pointer">
                             <p class="text-sm font-medium tracking-wide leading-tight text-black">Add</p>
                         </div>
                     </div>
 
-                    <!-- communuties contents -->
+                    <!-- Upcoming Events contents -->
                     <div id="communities">
                          <!-- horizontal line -->
                         <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
@@ -235,10 +235,11 @@
                                 
                             <div class="ml-auto pt-2">
                                 <select class="text-purple-600 mr-5 ">
-                                    <!-- <option value="">Workers</option> -->
+                                    <option value="">All Events</option>
                                     <option value="" selected>Latest Events</option>
-                                    <!-- <option value="" >Members</option>
-                                    <option value="" >Leaders </option> -->
+                                    <option value="" >Last Month</option>
+                                    <option value="" >This year </option>
+                                    <option value="" >Last year </option>
                                 
                                 </select>
                             </div>
@@ -312,9 +313,10 @@
                                     </div>
                                     <div class="ml-10">
                                         <p class="text-xs font-semibold tracking-wide leading-none text-black">Upload supports only jpeg files, <br/>file size must not be more than 10mb</p>
-                                        <button for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-purple-400  rounded mt-5 text-xs font-medium tracking-wide leading-none text-black pointer" >
+                                        <label for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-purple-400  rounded mt-5 text-xs font-medium tracking-wide leading-none text-black pointer" >
                                             Edit
-                                        </button>
+                                            <input type="file" id="upload" class="hidden">
+                                        </label>
                                     </div>
                                 </div>
                                 
@@ -326,15 +328,15 @@
                         <div id="settings" class="hidden">
                             <div class="w-96 border rounded-lg border-gray-500 mt-5">
                                 <div class="p-5 " >
-                                    <div class="mb-2">
-                                        <p class="text-sm tracking-wide leading-tight text-black">Delete community for everyone</p>
+                                    <div class="mb-2 flex">
+                                        <p class="text-sm tracking-wide leading-tight text-black">Set Reminder</p>
+                                        <input type="checkbox" name="" id="" class="ml-auto"/>
                                     </div>
+
                                     <div class="mb-2">
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700">This community is for general communication and announcements.</p>
+                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700">Daily.</p>
                                     </div>
-                                    <div class="mb-2">
-                                        <p class="text-xs font-medium tracking-wide leading-none text-red-600 pointer" >Delete</p>
-                                    </div>
+                                   
                                 </div>
                                 
                             </div>
@@ -342,10 +344,10 @@
                             <div class="w-96 border rounded-lg border-gray-500 mt-5">
                                 <div class="p-5 " >
                                     <div class="mb-2">
-                                        <p class="text-sm tracking-wide leading-tight text-black">Delete community for everyone</p>
+                                        <p class="text-sm tracking-wide leading-tight text-black">Delete Events</p>
                                     </div>
                                     <div class="mb-2">
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700">This community is for general communication and announcements.</p>
+                                        <p class="w-80 text-xs tracking-wide leading-none text-gray-700">Church outreach is for every member of our local church to take the word of God to the outside walls of the church in obedience to Jesus’s commandment to his church.</p>
                                     </div>
                                     <div class="mb-2">
                                         <p class="text-xs font-medium tracking-wide leading-none text-red-600 pointer" >Delete</p>
@@ -357,13 +359,179 @@
                     
                     </div>
 
-                    <!-- deleted communities contents -->
+                    <!-- Announcement contents -->
                     <div id="deleted-communities" class="hidden">
+                        <!-- horizontal line -->
+                       <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
+                       
+                       <div class="flex">
+                           <div class="flex space-x-8 items-center justify-start p-2">
+                       
+                               <a href="#" class="text-sm font-bold tracking-wide leading-tight text-purple-500">Birthday</a>
+       
+                               <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black">Church Services</a>
+       
+                               <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black">Naming Ceremony</a>
+       
+                               <div>
+                                   <svg width="36" height="22" viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <g clip-path="url(#clip0_635_14689)">
+                                       <path d="M17.4951 4.92212L23.2364 10.6728C23.2811 10.7147 23.3168 10.7654 23.3412 10.8217C23.3655 10.878 23.3781 10.9387 23.3781 11C23.3781 11.0614 23.3655 11.1221 23.3412 11.1784C23.3168 11.2346 23.2811 11.2853 23.2364 11.3273L17.4951 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                       <path d="M12.6233 4.92212L18.3739 10.6728C18.4596 10.7602 18.5076 10.8777 18.5076 11C18.5076 11.1224 18.4596 11.2399 18.3739 11.3273L12.6233 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                       </g>
+                                       <defs>
+                                       <clipPath id="clip0_635_14689">
+                                       <rect width="13.0909" height="13.0909" fill="white" transform="translate(11.4546 4.45459)"/>
+                                       </clipPath>
+                                       </defs>
+                                   </svg>
+                                       
+                               </div>
+       
+                           </div>
+                               
+                           <div class="ml-auto pt-2">
+                               <select class="text-purple-600 mr-5 ">
+                                   <<option value="">All Announcements</option>
+                                   <option value="" selected>Latest Announcements</option>
+                                   <option value="" >From Last Month</option>
+                                   <option value="" >From This year </option>
+                                   <option value="" >From Last year </option>
+                               
+                               </select>
+                           </div>
+                       </div>
+                       
+                       
+                       <!-- horizontal line -->
+                       <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
+                       
+                       <div class="inline-flex space-x-16 items-start justify-start p-2.5">
+                           <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventAbout()">Celebrant 1</p>
+
+                           <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventSettings()" >Celebrant 2</p>
+
+                           <svg width="36" height="22" viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_635_14689)">
+                            <path d="M17.4951 4.92212L23.2364 10.6728C23.2811 10.7147 23.3168 10.7654 23.3412 10.8217C23.3655 10.878 23.3781 10.9387 23.3781 11C23.3781 11.0614 23.3655 11.1221 23.3412 11.1784C23.3168 11.2346 23.2811 11.2853 23.2364 11.3273L17.4951 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.6233 4.92212L18.3739 10.6728C18.4596 10.7602 18.5076 10.8777 18.5076 11C18.5076 11.1224 18.4596 11.2399 18.3739 11.3273L12.6233 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_635_14689">
+                            <rect width="13.0909" height="13.0909" fill="white" transform="translate(11.4546 4.45459)"/>
+                            </clipPath>
+                            </defs>
+                            </svg>
+
+                            <div class="inline-flex items-center justify-center w-40 h-10 px-2 py-2.5 bg-gray-100 rounded ml-auto mr-20 pointer">
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black">Add Celebrant</p>
+                            </div>
+                       </div>
+                       <div class="bg-gray-500" style="width: 600px; height: 0.50px;"></div>
+                       <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
+
+                       <div id="about">
+                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                               <div class="flex p-5" >
+                                   <div>
+                                       <p class="text-sm tracking-wide leading-tight text-black">Heading</p>
+                                       <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Happy Birthday Sister Joy!</p>
+                                   </div>
+                                   <div class="ml-auto text">
+                                       <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                   </div>
+                               </div>
+                           </div>
+       
+                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                               <div class="flex p-5 pb-0" >
+                                   <div>
+                                       <p class="text-sm tracking-wide leading-tight text-black">Description</p>
+                                   </div>
+                                   <div class="ml-auto text">
+                                       <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                   </div>
+                               </div>
+                               <p class="w-72 text-xs tracking-wide leading-none text-gray-700 p-5">Church birthday Message here.....</p>
+                           </div>
+       
+                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                            <p class="text-sm tracking-wide leading-tight text-black pt-5 pl-5">Image (Uploaded)</p>
+                               <div class="flex mt-1 p-5">
+                                   <div class="bg-gray-200 rounded pl-7 pr-7 pt-5 h-20">
+                                       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                           <g clip-path="url(#clip0_650_17102)">
+                                           <path d="M6.92266 21.4485L21.4941 21.4485C22.4409 21.4485 23.2084 20.681 23.2084 19.7342V8.59134C23.2084 7.64457 22.4409 6.87706 21.4941 6.87706L6.92266 6.87706C5.97589 6.87706 5.20837 7.64457 5.20837 8.59134V19.7342C5.20837 20.681 5.97589 21.4485 6.92266 21.4485Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                           <path d="M0.922607 17.1627V4.30559C0.922607 3.85094 1.10322 3.4149 1.42471 3.09341C1.7462 2.77192 2.18224 2.59131 2.63689 2.59131H18.0655" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                           <path d="M6.23694 21.3113L12.9741 14.197C13.1334 14.0219 13.3273 13.8817 13.5435 13.7852C13.7597 13.6888 13.9936 13.6381 14.2303 13.6365C14.4671 13.6349 14.7016 13.6824 14.9191 13.7759C15.1366 13.8694 15.3324 14.0069 15.4941 14.1798L22.2655 21.277" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                           </g>
+                                           <defs>
+                                           <clipPath id="clip0_650_17102">
+                                           <rect width="24" height="24" fill="white" transform="translate(0.0654297 0.0197754)"/>
+                                           </clipPath>
+                                           </defs>
+                                       </svg>
+                                            
+                                   </div>
+                                   <div class="ml-10">
+                                       <p class="text-xs font-semibold tracking-wide leading-none text-black">Upload supports only jpeg files, <br/>file size must not be more than 10mb</p>
+                                       <label for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-purple-400  rounded mt-5 text-xs font-medium tracking-wide leading-none text-black pointer" >
+                                            <p class="text-xs font-medium tracking-wide leading-none text-black">Edit</p>
+                                            <input type="file" id="upload" class="hidden">
+                                       </label>
+                                   </div>
+                               </div>
+                               
+                           </div>
+                       </div>
+                       
+                     
+
+                       <div id="settings" class="hidden">
+                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                               <div class="p-5 " >
+                                   <div class="mb-2 flex">
+                                       <p class="text-sm tracking-wide leading-tight text-black">Set Reminder</p>
+                                       <input type="checkbox" name="" id="" class="ml-auto"/>
+                                   </div>
+
+                                   <div class="mb-2">
+                                       <p class="w-72 text-xs tracking-wide leading-none text-gray-700">Daily.</p>
+                                   </div>
+                                  
+                               </div>
+                               
+                           </div>
+
+                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                               <div class="p-5 " >
+                                   <div class="mb-2">
+                                       <p class="text-sm tracking-wide leading-tight text-black">Delete Events</p>
+                                   </div>
+                                   <div class="mb-2">
+                                       <p class="w-80 text-xs tracking-wide leading-none text-gray-700">Church outreach is for every member of our local church to take the word of God to the outside walls of the church in obedience to Jesus’s commandment to his church.</p>
+                                   </div>
+                                   <div class="mb-2">
+                                       <p class="text-xs font-medium tracking-wide leading-none text-red-600 pointer" >Delete</p>
+                                   </div>
+                               </div>
+                               
+                           </div>
+                       </div>
+                   
+                   </div>
+
+                   <!-- Deleted Events contents -->
+                   <div id="deleted-event" class="hidden">
+
+                        <!-- horizontal line -->
+                        <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
+
                         <div class="flex">
                             <div class="w-96 border rounded-lg border-gray-500 mt-5 mr-5">
                                 <div class="flex p-5" >
                                     <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Precious sisters</p>
+                                        <p class="text-sm tracking-wide leading-tight text-black">Sisters Conference</p>
                                         <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 2 weeks ago</p>
                                     </div>
                                     <div class="ml-auto text">
@@ -375,7 +543,7 @@
                             <div class="w-96 border rounded-lg border-gray-500 mt-5">
                                 <div class="flex p-5" >
                                     <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Esteemed Youths</p>
+                                        <p class="text-sm tracking-wide leading-tight text-black">Word and Power Meeting</p>
                                         <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 1 month ago</p>
                                     </div>
                                     <div class="ml-auto text">
@@ -389,7 +557,7 @@
                             <div class="w-96 border rounded-lg border-gray-500 mt-5 mr-5">
                                 <div class="flex p-5" >
                                     <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Ikorodu Chapter</p>
+                                        <p class="text-sm tracking-wide leading-tight text-black">Worship Meeting</p>
                                         <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 2 months ago</p>
                                     </div>
                                     <div class="ml-auto text">
@@ -401,7 +569,7 @@
                             <div class="w-96 border rounded-lg border-gray-500 mt-5">
                                 <div class="flex p-5" >
                                     <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Only Leaders</p>
+                                        <p class="text-sm tracking-wide leading-tight text-black">Prayer Conference</p>
                                         <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 2 months ago</p>
                                     </div>
                                     <div class="ml-auto text">
@@ -410,8 +578,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
+
+                   </div>
+
+
+                   
+
                    
                 </div>
                 

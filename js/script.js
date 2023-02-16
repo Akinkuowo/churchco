@@ -92,6 +92,7 @@ function myFunction() {
     const deletedcommunities  = document.getElementById("deleted-communities")
     const deletedcomm  = document.getElementById("deletedcomm")
     const comm  = document.getElementById("comm")
+  
 
     deletedcommunities.classList.remove("visible")
     deletedcommunities.classList.add("hidden")
@@ -103,11 +104,33 @@ function myFunction() {
     
   }
 
+  const handleUpcomingEvent = () =>{
+    const communities = document.getElementById("communities")
+    const deletedcommunities  = document.getElementById("deleted-communities")
+    const deletedcomm  = document.getElementById("deletedcomm")
+    const comm  = document.getElementById("comm")
+    const deleted_event  = document.getElementById("deletedevent")
+    const deletedevent  = document.getElementById("deleted-event")
+
+    deletedcommunities.classList.remove("visible")
+    deletedcommunities.classList.add("hidden")
+    deletedevent.classList.remove("visible")
+    deletedevent.classList.add("hidden")
+    communities.classList.remove("hidden")
+    comm.classList.add("text-black")
+    deletedcomm.classList.add("text-gray-500")
+    deletedcomm.classList.remove("text-black")
+    deleted_event.classList.add("text-gray-500")
+    deleted_event.classList.remove("text-black")
+    comm.classList.remove("text-gray-500")
+  }
+
   const handleDeletedCommunities = ()=>{
     const communities = document.getElementById("communities")
     const deletedcommunities  = document.getElementById("deleted-communities")
     const deletedcomm  = document.getElementById("deletedcomm")
     const comm  = document.getElementById("comm")
+   
 
     deletedcommunities.classList.remove("hidden")
     deletedcommunities.classList.add("visible")
@@ -118,6 +141,48 @@ function myFunction() {
     deletedcomm.classList.remove("text-gray-500")
 
     
+  }
+
+  const handleAnnouncement = () =>{
+    const communities = document.getElementById("communities")
+    const deletedcommunities  = document.getElementById("deleted-communities")
+    const deletedcomm  = document.getElementById("deletedcomm")
+    const comm  = document.getElementById("comm")
+    const deleted_event  = document.getElementById("deletedevent")
+    const deletedevent  = document.getElementById("deleted-event")
+
+    deletedcommunities.classList.remove("hidden")
+    deletedcommunities.classList.add("visible")
+    deletedevent.classList.remove("visible")
+    deletedevent.classList.add("hidden")
+    communities.classList.add("hidden")
+    deletedcomm.classList.add("text-black")
+    comm.classList.add("text-gray-500")
+    comm.classList.remove("text-black")
+    deletedcomm.classList.remove("text-gray-500")
+    deleted_event.classList.add("text-gray-500")
+    deleted_event.classList.remove("text-black")
+  }
+
+  const handleDeletedEvents = ()=> {
+    const communities = document.getElementById("communities")
+    const deletedcommunities  = document.getElementById("deleted-communities")
+    const deletedcomm  = document.getElementById("deletedcomm")
+    const comm  = document.getElementById("comm")
+    const deleted_event  = document.getElementById("deletedevent")
+    const deletedevent  = document.getElementById("deleted-event")
+
+    deletedcommunities.classList.remove("visible")
+    deletedcommunities.classList.add("hidden")
+    communities.classList.add("hidden")
+    deletedcomm.classList.add("text-gray-500")
+    comm.classList.add("text-gray-500")
+    comm.classList.remove("text-black")
+    deletedcomm.classList.remove("text-black")
+    deleted_event.classList.add("text-black")
+    deleted_event.classList.remove("text-gray-500")
+    deletedevent.classList.add("visible")
+    deletedevent.classList.remove("hidden")
   }
 
   const handleEventAbout = ()=>{
