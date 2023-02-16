@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <script src="js/tailwindcss.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div>
+        <button class="inline-flex items-center justify-center w-96 h-16 px-40 py-7 border rounded-lg border-black" onclick="popup()">
+            Add Audio
+        </button>
+    </div>
+    
+    <div class="absolute bg-gray-100 w-full backdrop-opacity-20 pb-10 pop-u" id="pop-up">
+        <div class="bg-white w-2/6 mx-auto relative top-10 rounded-xl p-5 overflow-y-auto overflow-x-hidden" style="height: 600px;">
+            <div class="flex pt-5">
+                <p class="text-lg font-medium tracking-wide leading-relaxed font-bold">Add Audio</p>
+                <div class="ml-auto " style="width: 10%; cursor: pointer;">
+                    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1075_2949)">
+                        <path d="M20.8457 11.1542L11.1543 20.8457" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.1543 11.1542L20.8457 20.8457" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.9997 1.14282H7.99972C4.21263 1.14282 1.14258 4.21287 1.14258 7.99997V24C1.14258 27.7871 4.21263 30.8571 7.99972 30.8571H23.9997C27.7868 30.8571 30.8569 27.7871 30.8569 24V7.99997C30.8569 4.21287 27.7868 1.14282 23.9997 1.14282Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1075_2949">
+                        <rect width="32" height="32" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>    
+                </div>
+            </div>
+            <p class="text-sm font-medium tracking-wide leading-tight text-black mt-5 font-semibold">Upload audio</p>
+            <div class="flex mt-5">
+                <div class="w-24 h-24 bg-gray-200 rounded p-auto">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1075_2936)">
+                        <path d="M4.28551 23.0058C6.17905 23.0058 7.71408 21.4708 7.71408 19.5773C7.71408 17.6837 6.17905 16.1487 4.28551 16.1487C2.39196 16.1487 0.856934 17.6837 0.856934 19.5773C0.856934 21.4708 2.39196 23.0058 4.28551 23.0058Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19.7142 18.7201C21.6078 18.7201 23.1428 17.185 23.1428 15.2915C23.1428 13.3979 21.6078 11.8629 19.7142 11.8629C17.8207 11.8629 16.2856 13.3979 16.2856 15.2915C16.2856 17.185 17.8207 18.7201 19.7142 18.7201Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.1424 15.2915V1.85148C23.1417 1.72033 23.1109 1.59109 23.0523 1.47372C22.9938 1.35635 22.9091 1.25398 22.8048 1.17449C22.7004 1.095 22.5793 1.04052 22.4506 1.01523C22.3219 0.98994 22.1891 0.994524 22.0624 1.02863L8.34815 4.83434C8.16692 4.88314 8.00671 4.99007 7.89213 5.13872C7.77755 5.28737 7.71492 5.46952 7.71387 5.6572V19.5772" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.71387 10.1486L23.1424 5.86292" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1075_2936">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>   
+                </div>
+                <div class="ml-10">
+                    <p class="text-xs font-semibold tracking-wide leading-none text-black">Upload supports only mp3 files, <br/>file size must not be more than 50mb</p>
+                    <label for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-gray-100 rounded mt-5 " style="cursor: pointer;">
+                        <p class="text-xs font-medium tracking-wide leading-none text-black">Upload</p>
+                        <input type="file" id="upload" class="hidden">
+                    </label>
+                </div>
+            </div>
+
+            <p class="text-sm font-medium tracking-wide leading-tight text-black mt-5 font-semibold">Upload thumbnail</p>
+            <div class="flex mt-5">
+                <div class="w-24 h-24 bg-gray-200 rounded p-auto">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1075_2936)">
+                        <path d="M4.28551 23.0058C6.17905 23.0058 7.71408 21.4708 7.71408 19.5773C7.71408 17.6837 6.17905 16.1487 4.28551 16.1487C2.39196 16.1487 0.856934 17.6837 0.856934 19.5773C0.856934 21.4708 2.39196 23.0058 4.28551 23.0058Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19.7142 18.7201C21.6078 18.7201 23.1428 17.185 23.1428 15.2915C23.1428 13.3979 21.6078 11.8629 19.7142 11.8629C17.8207 11.8629 16.2856 13.3979 16.2856 15.2915C16.2856 17.185 17.8207 18.7201 19.7142 18.7201Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.1424 15.2915V1.85148C23.1417 1.72033 23.1109 1.59109 23.0523 1.47372C22.9938 1.35635 22.9091 1.25398 22.8048 1.17449C22.7004 1.095 22.5793 1.04052 22.4506 1.01523C22.3219 0.98994 22.1891 0.994524 22.0624 1.02863L8.34815 4.83434C8.16692 4.88314 8.00671 4.99007 7.89213 5.13872C7.77755 5.28737 7.71492 5.46952 7.71387 5.6572V19.5772" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.71387 10.1486L23.1424 5.86292" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1075_2936">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>   
+                </div>
+                <div class="ml-10">
+                    <p class="text-xs font-semibold tracking-wide leading-none text-black">Upload supports only jpeg files, <br/>file size must not be more than 10mb</p>
+                    <label for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-gray-100 rounded mt-5 " style="cursor: pointer;">
+                        <p class="text-xs font-medium tracking-wide leading-none text-black">Add</p>
+                        <input type="file" id="upload" class="hidden">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group mt-5">
+                <label class="block sm:text-sm font-black">Audio title</label>
+                <input 
+                    class="
+                    placeholder:text-slate-400 
+                    block bg-white w-96 border border-slate-300 
+                    rounded-md py-2 pl-5 pr-3 mt-2
+                    shadow-sm focus:outline-none 
+                    focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Title Here....." 
+                    type="text" 
+                    name="title"
+                />
+            </div>
+            <div class="form-group mt-5">
+                <label class="block sm:text-sm font-black">Audio Categories</label>
+                <select class="block bg-white w-96 border border-slate-300 
+                rounded-md py-2 pl-5 pr-3 mt-2">
+                    <option value="sermon">Sermon</option>
+                    <option value="">Prophesies</option>
+                    <option value="">Confession</option>
+                    <option value="">Worship</option>
+                </select> 
+            </div>
+
+            <button class="inline-flex items-center justify-center w-96 h-16 px-20 py-7 bg-purple-400 rounded-lg mt-5">
+               Add audio
+            </button>
+
+            <buton class="inline-flex items-center justify-center w-96 h-16 px-40 py-7 border rounded-lg border-black mt-5">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

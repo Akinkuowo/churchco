@@ -19,6 +19,7 @@
     transition: transform 0.4s, top 0.4s;
   }
 
+
   .open-popup{
     transform: translate(-50%, -50%) scale(1);
     top: 50%;
@@ -26,11 +27,38 @@
 
   }
 
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.moveactive{
+    position: relative;
+    left: 130px;
+}
+
+.moveeventactive{
+    position: relative;
+    left: 110px;
+}
+
+.moveactivesetting{
+    position: relative;
+    left: 270px;
+}
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
     display: inline-block;
   }
+
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
