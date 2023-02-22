@@ -210,3 +210,53 @@ function myFunction() {
     settings.classList.remove("hidden")
     moveactive.classList.add("moveeventactive")
   }
+
+  const handleStoreAvailableItems = ()=>{
+    const avail = document.getElementById("avail")
+    const ordered = document.getElementById("ordered")
+    const delivered = document.getElementById("delivered")
+    const moveactive = document.getElementById("moveactive")
+    // const pop_up = document.getElementById("pop-up")
+
+    avail.classList.add("visible")
+    avail.classList.remove("hidden")
+    ordered.classList.remove("visible")
+    ordered.classList.add("hidden")
+    delivered.classList.remove("visible")
+    delivered.classList.add("hidden")
+    moveactive.classList.remove("movestoreactive")
+    moveactive.classList.remove("movedelivereactive")
+  }
+
+
+  const handleStoreOrderedItems= ()=>{
+    const avail = document.getElementById("avail")
+    const ordered = document.getElementById("ordered")
+    const delivered = document.getElementById("delivered")
+    const moveactive = document.getElementById("moveactive")
+    // const pop_up = document.getElementById("pop-up")
+
+    avail.classList.add("hidden")
+    ordered.classList.add("visible")
+    ordered.classList.remove("hidden")
+    delivered.classList.remove("visible")
+    delivered.classList.add("hidden")
+    moveactive.classList.add("movestoreactive")
+    moveactive.classList.remove("movedelivereactive")
+  }
+
+  const handleStoreDeliveredItems= ()=>{
+    const avail = document.getElementById("avail")
+    const ordered = document.getElementById("ordered")
+    const delivered = document.getElementById("delivered")
+    const moveactive = document.getElementById("moveactive")
+    // const pop_up = document.getElementById("pop-up")
+
+    avail.classList.add("hidden")
+    delivered.classList.add("visible")
+    delivered.classList.remove("hidden")
+    ordered.classList.remove("visible")
+    ordered.classList.add("hidden")
+    moveactive.classList.remove("movestoreactive")
+    moveactive.classList.add("movedelivereactive")
+  }

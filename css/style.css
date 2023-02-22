@@ -49,6 +49,16 @@
     left: 110px;
 }
 
+.movestoreactive{
+    position: relative;
+    left: 200px;
+}
+
+.movedelivereactive{
+    position: relative;
+    left: 390px;
+}
+
 .moveactivesetting{
     position: relative;
     left: 270px;
