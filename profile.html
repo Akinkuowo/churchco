@@ -189,17 +189,9 @@
                 <div class="p-10">
                     <div class="flex pb-7">
                         <div>
-                            <p class="text-lg font-medium tracking-wide leading-relaxed text-black pointer" id="comm" onclick="handleUpcomingEvent()">Upcoming Events (3)</p>
+                            <p class="text-lg font-medium tracking-wide leading-relaxed font-black pointer">Admin's Profile</p>
                         </div>
-                        <div class="ml-5">
-                            <p class="text-lg font-medium tracking-wide leading-relaxed text-gray-500 pointer" onclick="handleAnnouncement()" id="deletedcomm">Announcements (3)</p>
-                        </div>
-                        <div class="ml-5">
-                            <p class="text-lg font-medium tracking-wide leading-relaxed text-gray-500 pointer" onclick="handleDeletedEvents()" id="deletedevent">Delete Events</p>
-                        </div>
-                        <div class="inline-flex items-center justify-center w-44 h-10 px-6 py-2.5 bg-gray-100 rounded ml-auto mr-40 pointer">
-                            <p class="text-sm font-medium tracking-wide leading-tight text-black">Add</p>
-                        </div>
+                       
                     </div>
 
                     <!-- Upcoming Events contents -->
@@ -210,380 +202,609 @@
                         <div class="flex">
                             <div class="flex space-x-8 items-center justify-start p-2">
                         
-                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-purple-500">Church Outreach</a>
+                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black text-purple-500" onclick="handleProfile()" id="pro">Profile</a>
         
-                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black">Prayer Conference</a>
+                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black" onclick="handleUsers()" id="use">Users</a>
         
-                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black">Easter Meetingn</a>
+                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black" onclick="handleLocation()" id="loc">Locations</a>
+
+                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black" onclick="handleAccount()" id="acc">Account</a>
         
-                                <div>
-                                    <svg width="36" height="22" viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_635_14689)">
-                                        <path d="M17.4951 4.92212L23.2364 10.6728C23.2811 10.7147 23.3168 10.7654 23.3412 10.8217C23.3655 10.878 23.3781 10.9387 23.3781 11C23.3781 11.0614 23.3655 11.1221 23.3412 11.1784C23.3168 11.2346 23.2811 11.2853 23.2364 11.3273L17.4951 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12.6233 4.92212L18.3739 10.6728C18.4596 10.7602 18.5076 10.8777 18.5076 11C18.5076 11.1224 18.4596 11.2399 18.3739 11.3273L12.6233 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </g>
-                                        <defs>
-                                        <clipPath id="clip0_635_14689">
-                                        <rect width="13.0909" height="13.0909" fill="white" transform="translate(11.4546 4.45459)"/>
-                                        </clipPath>
-                                        </defs>
-                                    </svg>
+                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black" onclick="handleBagdes()" id="bad">Badges</a>
+
+                                <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black" onclick="handleInput()" id="inp">Input</a>
+        
+        
+                            </div>
+                           
+                        </div>
+                        
+                        
+                        <!-- horizontal line -->
+                        <div class="bg-gray-500" style="width: 500px; height: 0.50px;"></div>
+                        
+                        <div id="profile" >
+                            
+                            <div class="inline-flex space-x-16 items-start justify-start p-2.5">
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventAbout()">About</p>
+    
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventSettings()" >Settings</p>
+                            </div>
+                            <div class="w-44 h-0.5 bg-gray-500"></div>
+                            <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
+    
+                            <div id="about">
+                                <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                                    <div class="flex p-5" >
+                                        <div>
+                                            <p class="text-sm tracking-wide leading-tight text-black">Church name</p>
+                                            <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">The church of God</p>
+                                        </div>
+                                        <div class="ml-auto text">
+                                            <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                                    <div class="flex p-5 pb-0" >
+                                        <div>
+                                            <p class="text-sm tracking-wide leading-tight text-black">About Us</p>
+                                        </div>
+                                        <div class="ml-auto text">
+                                            <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                        </div>
+                                    </div>
+                                    <p class="w-72 text-xs tracking-wide leading-none text-gray-700 p-5">Church outreach is for every member of our local church to take the word of God to the outside walls of the church in obedience to Jesus’s commandment to his church.</p>
+                                </div>
+            
+                                <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                                    <div class="flex p-5 pb-0" >
+                                        <div>
+                                            <p class="text-sm tracking-wide leading-tight text-black">Church Address</p>
+                                        </div>
+                                        <div class="ml-auto text">
+                                            <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                        </div>
+                                    </div>
+                                    <p class="w-72 text-xs tracking-wide leading-none text-gray-700 p-5">Address Here...</p>
+                                </div>
+                            </div>
+                            
+                            <div id="settings" class="hidden">
+                                <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                                    <div class="flex p-5" >
+                                        <div>
+                                            <p class="text-sm tracking-wide leading-tight text-black">Email</p>
+                                            <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">info@churchofGod</p>
+                                        </div>
+                                        <div class="ml-auto text">
+                                            <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                                    <div class="flex p-5" >
+                                        <div>
+                                            <p class="text-sm tracking-wide leading-tight text-black">Phone Number</p>
+                                            <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">+01 2345678</p>
+                                        </div>
+                                        <div class="ml-auto text">
+                                            <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="w-96 border rounded-lg border-gray-500 mt-5">
+                                    <div class="flex p-5" >
+                                        <div>
+                                            <p class="text-sm tracking-wide leading-tight text-black">Password</p>
+                                            <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Password Here....</p>
+                                        </div>
+                                        <div class="ml-auto text">
+                                            <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
+                                            <div class="pointer">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 14C12.5304 14 13.0391 13.7893 13.4142 13.4142C13.7893 13.0391 14 12.5304 14 12C14 11.4696 13.7893 10.9609 13.4142 10.5858C13.0391 10.2107 12.5304 10 12 10C11.4696 10 10.9609 10.2107 10.5858 10.5858C10.2107 10.9609 10 11.4696 10 12C10 12.5304 10.2107 13.0391 10.5858 13.4142C10.9609 13.7893 11.4696 14 12 14Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M21 12C19.111 14.991 15.718 18 12 18C8.282 18 4.889 14.991 3 12C5.299 9.158 7.992 6 12 6C16.008 6 18.701 9.158 21 12Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="mt-10">
+                                    <p class="text-sm tracking-wide leading-normal font-black" >Generate unique code for Leaders and Members</p>
+                                    <div class="flex mt-5">
+                                        <div class="inline-flex items-center justify-center w-40 h-10 px-6 py-2.5 bg-purple-400 rounded pointer">
+                                            <p class="text-sm font-medium tracking-wide leading-tight text-black">Generate code</p>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-2xl font-light tracking-wider text-center text-black">CODE GENERATED WILL DISPLAY HERE</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-3">
+                                        <p class="text-sm font-displaysemibold tracking-wide leading-normal text-green-500" style="width: 455px;">This code should be given strictly to only leaders and members of a church, guests (visitors) shouldn’t be given access to this code for documentation purposes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                        <div id="users" class="hidden">
+                           
+                            <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
+                        
+                            <div class="inline-flex space-x-16 items-start justify-start p-2.5">
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleAbout()">Leaders (12)</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleMembers()">Members (75)</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleSettings()" >Guest (35)</p>
+                            </div>
+                            <div class="w-96 h-0.5 bg-gray-500"></div>
+                            <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
+
+                            <div id="leader" class="">
+                                <div class="flex ml-96;" style="margin-left: 40rem;">
+                                    <select class="text-purple-600 mr-5">
+                                        <option value="">Filter By</option>
+                                        <option value="">Male</option>
+                                        <option value="" >Female</option>
+                                        <option value="" >Same Location </option>
+                                    
+                                    </select>
+                                    
+                                    <div class="inline-flex space-x-2.5 items-center justify-center  h-10 px-6 py-2.5 bg-gray-100 rounded">
+                                        <div class="flex items-center justify-center h-3.5 pt-0.5 mr-3" onclick="popup()" style="cursor: pointer;">
+                                            <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_635_15265)">
+                                                <path d="M5.43535 5.93466C6.7186 5.93466 7.75888 4.89438 7.75888 3.61113C7.75888 2.32788 6.7186 1.2876 5.43535 1.2876C4.1521 1.2876 3.11182 2.32788 3.11182 3.61113C3.11182 4.89438 4.1521 5.93466 5.43535 5.93466Z" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M4.91881 13.6797H0.788086V12.1307C0.796307 11.3436 1.00389 10.5714 1.39145 9.88628C1.77901 9.20114 2.3339 8.62541 3.00429 8.21286C3.67468 7.80031 4.4387 7.56441 5.22498 7.52718C6.01126 7.48996 6.79414 7.65263 7.50051 8" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M11.1147 8.51636V14.7124" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.01709 11.6143H14.2132" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_635_15265">
+                                                <rect width="14.4575" height="14.4575" fill="white" transform="translate(0.271484 0.77124)"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                                
+                                            <p class="text-sm font-medium tracking-wide leading-tight text-black ml-2">Invite People</p>
+                                        </div>
+    
+                                        <div class="absolute">
+    
+                                        </div>
+                                    
                                         
+                                    </div>
                                 </div>
-        
+    
+                                <table class="border-collapse border border-slate-500 mt-5">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-slate-600 border p-5">#</th>
+                                            <th class="border-slate-600 border p-5 pr-20">Full Name</th>
+                                            <th class="border-slate-600 border p-5">Gender</th>
+                                            <th class="border-slate-600 border p-5 pr-32 text-left">Email</th>
+                                            <th class="border-slate-600 border p-5">Phone Number</th>
+                                            <th class="border-slate-600 border p-5">Location</th>
+                                            <th class="border-slate-600 border p-5">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">01</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Bolanle Coker</td>
+                                            <td class="border-slate-600 border p-5">Female</td>
+                                            <td class="border-slate-600 border p-5 pr-32">bolanlecoker@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Lekki</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">02</td>
+                                            <td class="border-slate-600 border p-5 pr-20">John Doe</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">johndoe@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Magodo</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">03</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Jane Doe</td>
+                                            <td class="border-slate-600 border p-5">Female</td>
+                                            <td class="border-slate-600 border p-5 pr-32">janedoe@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Ikorodu</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">04</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Collins Ham</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">collinsham@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Ketu</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">05</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Peter Bay</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">paterbay@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Victoria Island</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+
+                            <div id="member" class="hidden">
+                                <div class="flex ml-96;" style="margin-left: 40rem;">
+                                    <select class="text-purple-600 mr-5">
+                                        <option value="">Filter By</option>
+                                        <option value="">Male</option>
+                                        <option value="" >Female</option>
+                                        <option value="" >Same Location </option>
+                                    
+                                    </select>
+                                    
+                                    <div class="inline-flex space-x-2.5 items-center justify-center  h-10 px-6 py-2.5 bg-gray-100 rounded">
+                                        <div class="flex items-center justify-center h-3.5 pt-0.5 mr-3" onclick="popup()" style="cursor: pointer;">
+                                            <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_635_15265)">
+                                                <path d="M5.43535 5.93466C6.7186 5.93466 7.75888 4.89438 7.75888 3.61113C7.75888 2.32788 6.7186 1.2876 5.43535 1.2876C4.1521 1.2876 3.11182 2.32788 3.11182 3.61113C3.11182 4.89438 4.1521 5.93466 5.43535 5.93466Z" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M4.91881 13.6797H0.788086V12.1307C0.796307 11.3436 1.00389 10.5714 1.39145 9.88628C1.77901 9.20114 2.3339 8.62541 3.00429 8.21286C3.67468 7.80031 4.4387 7.56441 5.22498 7.52718C6.01126 7.48996 6.79414 7.65263 7.50051 8" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M11.1147 8.51636V14.7124" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.01709 11.6143H14.2132" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_635_15265">
+                                                <rect width="14.4575" height="14.4575" fill="white" transform="translate(0.271484 0.77124)"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                                
+                                            <p class="text-sm font-medium tracking-wide leading-tight text-black ml-2">Invite People</p>
+                                        </div>
+    
+                                        <div class="absolute">
+    
+                                        </div>
+                                    
+                                        
+                                    </div>
+                                </div>
+    
+                                <table class="border-collapse border border-slate-500 mt-5">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-slate-600 border p-5">#</th>
+                                            <th class="border-slate-600 border p-5 pr-20">Full Name</th>
+                                            <th class="border-slate-600 border p-5">Gender</th>
+                                            <th class="border-slate-600 border p-5 pr-32 text-left">Email (members)</th>
+                                            <th class="border-slate-600 border p-5">Phone Number</th>
+                                            <th class="border-slate-600 border p-5">Location</th>
+                                            <th class="border-slate-600 border p-5">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">01</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Bolanle Coker</td>
+                                            <td class="border-slate-600 border p-5">Female</td>
+                                            <td class="border-slate-600 border p-5 pr-32">bolanlecoker@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Lekki</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">02</td>
+                                            <td class="border-slate-600 border p-5 pr-20">John Doe</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">johndoe@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Magodo</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">03</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Jane Doe</td>
+                                            <td class="border-slate-600 border p-5">Female</td>
+                                            <td class="border-slate-600 border p-5 pr-32">janedoe@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Ikorodu</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">04</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Collins Ham</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">collinsham@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Ketu</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">05</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Peter Bay</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">paterbay@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Victoria Island</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="guest" class="hidden">
+                                <div class="flex ml-96;" style="margin-left: 40rem;">
+                                    <select class="text-purple-600 mr-5">
+                                        <option value="">Filter By</option>
+                                        <option value="">Male</option>
+                                        <option value="" >Female</option>
+                                        <option value="" >Same Location </option>
+                                    
+                                    </select>
+                                    
+                                    <div class="inline-flex space-x-2.5 items-center justify-center  h-10 px-6 py-2.5 bg-gray-100 rounded">
+                                        <div class="flex items-center justify-center h-3.5 pt-0.5 mr-3" onclick="popup()" style="cursor: pointer;">
+                                            <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_635_15265)">
+                                                <path d="M5.43535 5.93466C6.7186 5.93466 7.75888 4.89438 7.75888 3.61113C7.75888 2.32788 6.7186 1.2876 5.43535 1.2876C4.1521 1.2876 3.11182 2.32788 3.11182 3.61113C3.11182 4.89438 4.1521 5.93466 5.43535 5.93466Z" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M4.91881 13.6797H0.788086V12.1307C0.796307 11.3436 1.00389 10.5714 1.39145 9.88628C1.77901 9.20114 2.3339 8.62541 3.00429 8.21286C3.67468 7.80031 4.4387 7.56441 5.22498 7.52718C6.01126 7.48996 6.79414 7.65263 7.50051 8" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M11.1147 8.51636V14.7124" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.01709 11.6143H14.2132" stroke="#010101" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_635_15265">
+                                                <rect width="14.4575" height="14.4575" fill="white" transform="translate(0.271484 0.77124)"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                                
+                                            <p class="text-sm font-medium tracking-wide leading-tight text-black ml-2">Invite People</p>
+                                        </div>
+    
+                                        <div class="absolute">
+    
+                                        </div>
+                                    
+                                        
+                                    </div>
+                                </div>
+    
+                                <table class="border-collapse border border-slate-500 mt-5">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-slate-600 border p-5">#</th>
+                                            <th class="border-slate-600 border p-5 pr-20">Full Name</th>
+                                            <th class="border-slate-600 border p-5">Gender</th>
+                                            <th class="border-slate-600 border p-5 pr-32 text-left">Email (members)</th>
+                                            <th class="border-slate-600 border p-5">Phone Number</th>
+                                            <th class="border-slate-600 border p-5">Location</th>
+                                            <th class="border-slate-600 border p-5">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">01</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Bolanle Coker</td>
+                                            <td class="border-slate-600 border p-5">Female</td>
+                                            <td class="border-slate-600 border p-5 pr-32">bolanlecoker@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Lekki</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">02</td>
+                                            <td class="border-slate-600 border p-5 pr-20">John Doe</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">johndoe@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Magodo</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">03</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Jane Doe</td>
+                                            <td class="border-slate-600 border p-5">Female</td>
+                                            <td class="border-slate-600 border p-5 pr-32">janedoe@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Ikorodu</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">04</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Collins Ham</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">collinsham@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Ketu</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">05</td>
+                                            <td class="border-slate-600 border p-5 pr-20">Peter Bay</td>
+                                            <td class="border-slate-600 border p-5">Male</td>
+                                            <td class="border-slate-600 border p-5 pr-32">paterbay@gmail.com</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Victoria Island</td>
+                                            <td class="border-slate-600 border p-5 text-red-600" style="cursor: pointer;">Remove</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+
+                        <div id="location" class="hidden">
+                           
+                                <div class="flex ml-96;" style="margin-left: 40rem;">
+                                    <div class="text-purple-600 mr-5">
+                                        <!-- <option value="">Filter By</option>
+                                        <option value="">Male</option>
+                                        <option value="" >Female</option>
+                                        <option value="" >Same Location </option> -->
+                                    
+                                        </div>
+                                    
+                                    <div class="inline-flex space-x-2.5 items-center justify-center  h-10 px-6 py-2.5 bg-gray-100 rounded ml-32">
+                                        <div class="flex items-center justify-center h-3.5 pt-0.5 mr-3" onclick="popup()" style="cursor: pointer;">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_914_4691)">
+                                                <path d="M7 0.541016V13.5388" stroke="#010101" stroke-width="0.999828" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M0.500977 7H13.4987" stroke="#010101" stroke-width="0.999828" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_914_4691">
+                                                <rect width="13.9976" height="13.9976" fill="white" transform="translate(0.000976562 0.000976562)"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                                
+                                                
+                                            <p class="text-sm font-medium tracking-wide leading-tight text-black ml-2">Create Location</p>
+                                        </div>
+    
+                                        <div class="absolute">
+    
+                                        </div>
+                                    
+                                        
+                                    </div>
+                                </div>
+    
+                                <table class="border-collapse border border-slate-500 mt-5">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-slate-600 border p-5">#</th>
+                                            <th class="border-slate-600 border p-5 ">Location name</th>
+                                            <th class="border-slate-600 border p-5">Leader in Charge</th>
+                                            <th class="border-slate-600 border p-5 ">Assistant Leader</th>
+                                            <th class="border-slate-600 border p-5">Phone Number</th>
+                                            <th class="border-slate-600 border p-5">Address</th>
+                                            <th class="border-slate-600 border p-5">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">01</td>
+                                            <td class="border-slate-600 border p-5 ">Lekki</td>
+                                            <td class="border-slate-600 border p-5">Abigail Sanya</td>
+                                            <td class="border-slate-600 border p-5 ">Abigail Sanya</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Address Here...</td>
+                                            <td class="border-slate-600 border p-5">
+                                                <div class="flex">
+                                                    <p class="pointer text-green-600 mr-2">Edit</p>
+                                                    <p class="pointer text-red-600">Remove</p>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">02</td>
+                                            <td class="border-slate-600 border p-5 ">Magodo</td>
+                                            <td class="border-slate-600 border p-5">Bola Praise</td>
+                                            <td class="border-slate-600 border p-5 ">Bola Praise</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Address Here...</td>
+                                            <td class="border-slate-600 border p-5">
+                                                <div class="flex">
+                                                    <p class="pointer text-green-600 mr-2">Edit</p>
+                                                    <p class="pointer text-red-600">Remove</p>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">03</td>
+                                            <td class="border-slate-600 border p-5 ">Ikorodu</td>
+                                            <td class="border-slate-600 border p-5">James John</td>
+                                            <td class="border-slate-600 border p-5 ">James John</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Address Here...</td>
+                                            <td class="border-slate-600 border p-5">
+                                                <div class="flex">
+                                                    <p class="pointer text-green-600 mr-2">Edit</p>
+                                                    <p class="pointer text-red-600">Remove</p>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">04</td>
+                                            <td class="border-slate-600 border p-5 ">Ketu</td>
+                                            <td class="border-slate-600 border p-5">Shade Peace</td>
+                                            <td class="border-slate-600 border p-5 ">Shade Peace</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Address Here...</td>
+                                            <td class="border-slate-600 border p-5">
+                                                <div class="flex">
+                                                    <p class="pointer text-green-600 mr-2">Edit</p>
+                                                    <p class="pointer text-red-600">Remove</p>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-slate-600 border p-5">05</td>
+                                            <td class="border-slate-600 border p-5 ">Akure</td>
+                                            <td class="border-slate-600 border p-5">Bimbo Kehinde</td>
+                                            <td class="border-slate-600 border p-5 ">Bimbo Kehinde</td>
+                                            <td class="border-slate-600 border p-5">08100000000</td>
+                                            <td class="border-slate-600 border p-5">Address Here...</td>
+                                            <td class="border-slate-600 border p-5">
+                                                <div class="flex">
+                                                    <p class="pointer text-green-600 mr-2">Edit</p>
+                                                    <p class="pointer text-red-600">Remove</p>
+                                                </div>
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                           
+                        </div>
+
+                        <div id="account" class="hidden">
+                            <div class="inline-flex space-x-16 items-start justify-start p-2.5">
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventAbout()">Giving Presets</p>
+    
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventSettings()" >Account Overview</p>
+                            </div>
+                            <div class="w-64 h-0.5 bg-gray-500"></div>
+                            <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
+    
+                            <div id="giving">
+                            
+                            </div>
+                            
+                            <div id="overview" class="hidden">
                                 
-                            <div class="ml-auto pt-2">
-                                <select class="text-purple-600 mr-5 ">
-                                    <option value="">All Events</option>
-                                    <option value="" selected>Latest Events</option>
-                                    <option value="" >Last Month</option>
-                                    <option value="" >This year </option>
-                                    <option value="" >Last year </option>
-                                
-                                </select>
                             </div>
                         </div>
-                        
-                        
-                        <!-- horizontal line -->
-                        <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
-                        
-                        <div class="inline-flex space-x-16 items-start justify-start p-2.5">
-                            <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventAbout()">About</p>
 
-                            <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventSettings()" >Settings</p>
+                        <div id="badges" class="hidden">
+                            <h1>Badges</h1>
                         </div>
-                        <div class="w-44 h-0.5 bg-gray-500"></div>
-                        <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
 
-                        <div id="about">
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="flex p-5" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Title</p>
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Church Outreach</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="flex p-5 pb-0" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Description</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
-                                    </div>
-                                </div>
-                                <p class="w-72 text-xs tracking-wide leading-none text-gray-700 p-5">Church outreach is for every member of our local church to take the word of God to the outside walls of the church in obedience to Jesus’s commandment to his church.</p>
-                            </div>
-        
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="flex p-5 pb-0" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">More information</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
-                                    </div>
-                                </div>
-                                <p class="w-72 text-xs tracking-wide leading-none text-gray-700 p-5">This textbox can include time, date and venue for the event.</p>
-                            </div>
-        
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="flex mt-5 p-5">
-                                    <div class="bg-gray-200 rounded pl-7 pr-7 pt-5 h-20">
-                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <g clip-path="url(#clip0_650_17102)">
-                                            <path d="M6.92266 21.4485L21.4941 21.4485C22.4409 21.4485 23.2084 20.681 23.2084 19.7342V8.59134C23.2084 7.64457 22.4409 6.87706 21.4941 6.87706L6.92266 6.87706C5.97589 6.87706 5.20837 7.64457 5.20837 8.59134V19.7342C5.20837 20.681 5.97589 21.4485 6.92266 21.4485Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M0.922607 17.1627V4.30559C0.922607 3.85094 1.10322 3.4149 1.42471 3.09341C1.7462 2.77192 2.18224 2.59131 2.63689 2.59131H18.0655" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M6.23694 21.3113L12.9741 14.197C13.1334 14.0219 13.3273 13.8817 13.5435 13.7852C13.7597 13.6888 13.9936 13.6381 14.2303 13.6365C14.4671 13.6349 14.7016 13.6824 14.9191 13.7759C15.1366 13.8694 15.3324 14.0069 15.4941 14.1798L22.2655 21.277" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </g>
-                                            <defs>
-                                            <clipPath id="clip0_650_17102">
-                                            <rect width="24" height="24" fill="white" transform="translate(0.0654297 0.0197754)"/>
-                                            </clipPath>
-                                            </defs>
-                                        </svg>
-                                             
-                                    </div>
-                                    <div class="ml-10">
-                                        <p class="text-xs font-semibold tracking-wide leading-none text-black">Upload supports only jpeg files, <br/>file size must not be more than 10mb</p>
-                                        <label for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-purple-400  rounded mt-5 text-xs font-medium tracking-wide leading-none text-black pointer" >
-                                            Edit
-                                            <input type="file" id="upload" class="hidden">
-                                        </label>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                        <div id="input" class="hidden">
+                            <h1>Inputs</h1>
                         </div>
                         
-                      
-
-                        <div id="settings" class="hidden">
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="p-5 " >
-                                    <div class="mb-2 flex">
-                                        <p class="text-sm tracking-wide leading-tight text-black">Set Reminder</p>
-                                        <input type="checkbox" name="" id="" class="ml-auto"/>
-                                    </div>
-
-                                    <div class="mb-2">
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700">Daily.</p>
-                                    </div>
-                                   
-                                </div>
-                                
-                            </div>
-
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="p-5 " >
-                                    <div class="mb-2">
-                                        <p class="text-sm tracking-wide leading-tight text-black">Delete Events</p>
-                                    </div>
-                                    <div class="mb-2">
-                                        <p class="w-80 text-xs tracking-wide leading-none text-gray-700">Church outreach is for every member of our local church to take the word of God to the outside walls of the church in obedience to Jesus’s commandment to his church.</p>
-                                    </div>
-                                    <div class="mb-2">
-                                        <p class="text-xs font-medium tracking-wide leading-none text-red-600 pointer" >Delete</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    
                     </div>
-
-                    <!-- Announcement contents -->
-                    <div id="deleted-communities" class="hidden">
-                        <!-- horizontal line -->
-                       <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
-                       
-                       <div class="flex">
-                           <div class="flex space-x-8 items-center justify-start p-2">
-                       
-                               <a href="#" class="text-sm font-bold tracking-wide leading-tight text-purple-500">Birthday</a>
-       
-                               <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black">Church Services</a>
-       
-                               <a href="#" class="text-sm font-bold tracking-wide leading-tight text-black">Naming Ceremony</a>
-       
-                               <div>
-                                   <svg width="36" height="22" viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <g clip-path="url(#clip0_635_14689)">
-                                       <path d="M17.4951 4.92212L23.2364 10.6728C23.2811 10.7147 23.3168 10.7654 23.3412 10.8217C23.3655 10.878 23.3781 10.9387 23.3781 11C23.3781 11.0614 23.3655 11.1221 23.3412 11.1784C23.3168 11.2346 23.2811 11.2853 23.2364 11.3273L17.4951 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                       <path d="M12.6233 4.92212L18.3739 10.6728C18.4596 10.7602 18.5076 10.8777 18.5076 11C18.5076 11.1224 18.4596 11.2399 18.3739 11.3273L12.6233 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                       </g>
-                                       <defs>
-                                       <clipPath id="clip0_635_14689">
-                                       <rect width="13.0909" height="13.0909" fill="white" transform="translate(11.4546 4.45459)"/>
-                                       </clipPath>
-                                       </defs>
-                                   </svg>
-                                       
-                               </div>
-       
-                           </div>
-                               
-                           <div class="ml-auto pt-2">
-                               <select class="text-purple-600 mr-5 ">
-                                   <option value="">All Announcements</option>
-                                   <option value="" selected>Latest Announcements</option>
-                                   <option value="" >From Last Month</option>
-                                   <option value="" >From This year </option>
-                                   <option value="" >From Last year </option>
-                               
-                               </select>
-                           </div>
-                       </div>
-                       
-                       
-                       <!-- horizontal line -->
-                       <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
-                       
-                       <div class="inline-flex space-x-16 items-start justify-start p-2.5">
-                           <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventAbout()">Celebrant 1</p>
-
-                           <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventSettings()" >Celebrant 2</p>
-
-                           <svg width="36" height="22" viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_635_14689)">
-                            <path d="M17.4951 4.92212L23.2364 10.6728C23.2811 10.7147 23.3168 10.7654 23.3412 10.8217C23.3655 10.878 23.3781 10.9387 23.3781 11C23.3781 11.0614 23.3655 11.1221 23.3412 11.1784C23.3168 11.2346 23.2811 11.2853 23.2364 11.3273L17.4951 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12.6233 4.92212L18.3739 10.6728C18.4596 10.7602 18.5076 10.8777 18.5076 11C18.5076 11.1224 18.4596 11.2399 18.3739 11.3273L12.6233 17.078" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_635_14689">
-                            <rect width="13.0909" height="13.0909" fill="white" transform="translate(11.4546 4.45459)"/>
-                            </clipPath>
-                            </defs>
-                            </svg>
-
-                            <div class="inline-flex items-center justify-center w-40 h-10 px-2 py-2.5 bg-gray-100 rounded ml-auto mr-20 pointer">
-                                <p class="text-sm font-medium tracking-wide leading-tight text-black">Add Celebrant</p>
-                            </div>
-                       </div>
-                       <div class="bg-gray-500" style="width: 600px; height: 0.50px;"></div>
-                       <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
-
-                       <div id="about">
-                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                               <div class="flex p-5" >
-                                   <div>
-                                       <p class="text-sm tracking-wide leading-tight text-black">Heading</p>
-                                       <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Happy Birthday Sister Joy!</p>
-                                   </div>
-                                   <div class="ml-auto text">
-                                       <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
-                                   </div>
-                               </div>
-                           </div>
-       
-                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                               <div class="flex p-5 pb-0" >
-                                   <div>
-                                       <p class="text-sm tracking-wide leading-tight text-black">Description</p>
-                                   </div>
-                                   <div class="ml-auto text">
-                                       <button class="text-sm font-medium tracking-wide leading-tight text-purple-500">Edit</button>
-                                   </div>
-                               </div>
-                               <p class="w-72 text-xs tracking-wide leading-none text-gray-700 p-5">Church birthday Message here.....</p>
-                           </div>
-       
-                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                            <p class="text-sm tracking-wide leading-tight text-black pt-5 pl-5">Image (Uploaded)</p>
-                               <div class="flex mt-1 p-5">
-                                   <div class="bg-gray-200 rounded pl-7 pr-7 pt-5 h-20">
-                                       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                           <g clip-path="url(#clip0_650_17102)">
-                                           <path d="M6.92266 21.4485L21.4941 21.4485C22.4409 21.4485 23.2084 20.681 23.2084 19.7342V8.59134C23.2084 7.64457 22.4409 6.87706 21.4941 6.87706L6.92266 6.87706C5.97589 6.87706 5.20837 7.64457 5.20837 8.59134V19.7342C5.20837 20.681 5.97589 21.4485 6.92266 21.4485Z" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                           <path d="M0.922607 17.1627V4.30559C0.922607 3.85094 1.10322 3.4149 1.42471 3.09341C1.7462 2.77192 2.18224 2.59131 2.63689 2.59131H18.0655" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                           <path d="M6.23694 21.3113L12.9741 14.197C13.1334 14.0219 13.3273 13.8817 13.5435 13.7852C13.7597 13.6888 13.9936 13.6381 14.2303 13.6365C14.4671 13.6349 14.7016 13.6824 14.9191 13.7759C15.1366 13.8694 15.3324 14.0069 15.4941 14.1798L22.2655 21.277" stroke="#010101" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                           </g>
-                                           <defs>
-                                           <clipPath id="clip0_650_17102">
-                                           <rect width="24" height="24" fill="white" transform="translate(0.0654297 0.0197754)"/>
-                                           </clipPath>
-                                           </defs>
-                                       </svg>
-                                            
-                                   </div>
-                                   <div class="ml-10">
-                                       <p class="text-xs font-semibold tracking-wide leading-none text-black">Upload supports only jpeg files, <br/>file size must not be more than 10mb</p>
-                                       <label for="upload" class="inline-flex items-center justify-center w-24 h-10 px-6 py-2.5 bg-purple-400  rounded mt-5 text-xs font-medium tracking-wide leading-none text-black pointer" >
-                                            <p class="text-xs font-medium tracking-wide leading-none text-black">Edit</p>
-                                            <input type="file" id="upload" class="hidden">
-                                       </label>
-                                   </div>
-                               </div>
-                               
-                           </div>
-                       </div>
-                       
-                     
-
-                       <div id="settings" class="hidden">
-                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                               <div class="p-5 " >
-                                   <div class="mb-2 flex">
-                                       <p class="text-sm tracking-wide leading-tight text-black">Set Reminder</p>
-                                       <input type="checkbox" name="" id="" class="ml-auto"/>
-                                   </div>
-
-                                   <div class="mb-2">
-                                       <p class="w-72 text-xs tracking-wide leading-none text-gray-700">Daily.</p>
-                                   </div>
-                                  
-                               </div>
-                               
-                           </div>
-
-                           <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                               <div class="p-5 " >
-                                   <div class="mb-2">
-                                       <p class="text-sm tracking-wide leading-tight text-black">Delete Events</p>
-                                   </div>
-                                   <div class="mb-2">
-                                       <p class="w-80 text-xs tracking-wide leading-none text-gray-700">Church outreach is for every member of our local church to take the word of God to the outside walls of the church in obedience to Jesus’s commandment to his church.</p>
-                                   </div>
-                                   <div class="mb-2">
-                                       <p class="text-xs font-medium tracking-wide leading-none text-red-600 pointer" >Delete</p>
-                                   </div>
-                               </div>
-                               
-                           </div>
-                       </div>
-                   
-                   </div>
-
-                   <!-- Deleted Events contents -->
-                   <div id="deleted-event" class="hidden">
-
-                        <!-- horizontal line -->
-                        <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
-
-                        <div class="flex">
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5 mr-5">
-                                <div class="flex p-5" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Sisters Conference</p>
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 2 weeks ago</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-green-500 ">Restore</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="flex p-5" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Word and Power Meeting</p>
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 1 month ago</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-green-500 ">Restore</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex">
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5 mr-5">
-                                <div class="flex p-5" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Worship Meeting</p>
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 2 months ago</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-green-500 ">Restore</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="w-96 border rounded-lg border-gray-500 mt-5">
-                                <div class="flex p-5" >
-                                    <div>
-                                        <p class="text-sm tracking-wide leading-tight text-black">Prayer Conference</p>
-                                        <p class="w-72 text-xs tracking-wide leading-none text-gray-700 mt-5">Deleted 2 months ago</p>
-                                    </div>
-                                    <div class="ml-auto text">
-                                        <button class="text-sm font-medium tracking-wide leading-tight text-green-500 ">Restore</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                   </div>
-
-
-                   
-
                    
                 </div>
                 
