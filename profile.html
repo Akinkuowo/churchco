@@ -342,9 +342,9 @@
                             <div class="bg-gray-500" style="width: 1023px; height: 0.50px;"></div>
                         
                             <div class="inline-flex space-x-16 items-start justify-start p-2.5">
-                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleAbout()">Leaders (12)</p>
-                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleMembers()">Members (75)</p>
-                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleSettings()" >Guest (35)</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleLeaders()">Leaders (12)</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleUsermembers()">Members (75)</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleGuest()" >Guest (35)</p>
                             </div>
                             <div class="w-96 h-0.5 bg-gray-500"></div>
                             <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
@@ -448,7 +448,7 @@
                                 </table>
                             </div>
 
-                            <div id="member" class="hidden">
+                            <div id="user_member" class="hidden">
                                 <div class="flex ml-96;" style="margin-left: 40rem;">
                                     <select class="text-purple-600 mr-5">
                                         <option value="">Filter By</option>
@@ -590,7 +590,7 @@
                                             <th class="border-slate-600 border p-5">#</th>
                                             <th class="border-slate-600 border p-5 pr-20">Full Name</th>
                                             <th class="border-slate-600 border p-5">Gender</th>
-                                            <th class="border-slate-600 border p-5 pr-32 text-left">Email (members)</th>
+                                            <th class="border-slate-600 border p-5 pr-32 text-left">Email (Guest)</th>
                                             <th class="border-slate-600 border p-5">Phone Number</th>
                                             <th class="border-slate-600 border p-5">Location</th>
                                             <th class="border-slate-600 border p-5">Action</th>
@@ -780,19 +780,101 @@
 
                         <div id="account" class="hidden">
                             <div class="inline-flex space-x-16 items-start justify-start p-2.5">
-                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventAbout()">Giving Presets</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleGivingPresets()">Giving Presets</p>
     
-                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleEventSettings()" >Account Overview</p>
+                                <p class="text-sm font-medium tracking-wide leading-tight text-black pointer" onclick="handleAccountOverview()" >Account Overview</p>
                             </div>
                             <div class="w-64 h-0.5 bg-gray-500"></div>
                             <div class="w-16 h-0.5 bg-purple-500 " id="moveactive"></div>
     
                             <div id="giving">
-                            
+                                <form action="#" class="mt-5">
+                                    <p class="text-xs tracking-wide leading-none font-black mb-3">Kindly select your presets for giving below</p>
+                                    <div class="mb-3">
+                                        <input type="checkbox" name="Tithes" id=""> <span class="text-sm font-medium tracking-wide leading-tight font-black">Tithes</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="checkbox" name="Tithes" id=""> <span class="text-sm font-medium tracking-wide leading-tight font-black">Offering</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="checkbox" name="Tithes" id=""> <span class="text-sm font-medium tracking-wide leading-tight font-black">Building project</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="checkbox" name="Tithes" id=""> <span class="text-sm font-medium tracking-wide leading-tight font-black">Pledges</span>
+                                    </div>
+                                    <div class="mb-3">  
+                                        <input type="checkbox" name="Tithes" id=""> <span class="text-sm font-medium tracking-wide leading-tight font-black">Others</span>
+                                    </div>
+                                </form>
                             </div>
                             
                             <div id="overview" class="hidden">
-                                
+                                <div class="mt-5">
+                                    <div class="flex">
+                                        <p class="text-xs tracking-wide leading-none font-black relative top-4 mr-4">Kindly select a currency</p>
+                                        <div class="inline-flex space-x-2.5 items-center justify-between w-24 h-10 p-3 bg-gray-50 rounded pointer">
+                                            <p class="text-base font-medium tracking-wide leading-normal text-black">NGN</p>
+                                            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 1.25L6.5 6.75L12 1.25" stroke="#010101" stroke-width="1.375" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                                
+                                        </div>
+                                       
+                                    </div>
+
+                                    <div class="w-80 h-44 border rounded-lg border-gray-500 p-5 mt-5">
+                                        <p class="text-base tracking-wide leading-normal text-gray-500 mb-2">No accounts found</p>
+                                        <p class="w-80 text-sm font-medium tracking-wide leading-relaxed font-black mb-2">Add your church account number to get started</p>
+                                        <p class="text-sm font-semibold tracking-wide leading-tight text-purple-500 pointer">Add an account</p>
+                                    </div>
+
+                                    <div class="flex">
+                                        <div class="w-80 h-44 border rounded-lg border-gray-500 p-5 mt-5 mr-5 pt-10">
+                                            <p class="text-base tracking-wide leading-normal text-gray-500 mb-2">Total available amount</p>
+                                            <p class="w-80 text-lg font-medium tracking-wide leading-relaxed font-black mb-2">NGN 152,000</p>
+                                            <p class="text-sm font-semibold tracking-wide leading-tight text-purple-500 pointer">Withdraw</p>
+                                        </div>
+
+                                        <div class="w-80 h-44 border rounded-lg border-gray-500 p-5 mt-5 pt-10">
+                                            <p class="text-base tracking-wide leading-normal text-gray-500 mb-2">Total amount withdrawn</p>
+                                            <p class="w-80 text-lg font-medium tracking-wide leading-relaxed font-black mb-2">NGN 150,000</p>
+                                            <a href="all-withdrawal.html" class="text-sm font-semibold tracking-wide leading-tight text-purple-500 pointer">View all Withdrawals</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-5">
+                                        <div class="flex mb-5">
+                                            <p class="text-sm tracking-wide leading-tight text-gray-500">Offerings total</p>
+                                            <div class="amt ml-20">
+                                                <p class="text-sm font-semibold tracking-wide leading-tight font-black text-black-500" style="color: black">NGN 52,000.00</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="flex mb-5">
+                                            <p class="text-sm tracking-wide leading-tight text-gray-500">Tithes total</p>
+                                            <div class="amt ml-24">
+                                                <p class="text-sm font-semibold tracking-wide leading-tight font-black text-black-500" style="color: black">NGN 114,000.00</p>
+                                            </div>
+    
+                                        </div>
+                                        <div class="flex mb-5">
+                                            <p class="text-sm tracking-wide leading-tight text-gray-500">Building project total</p>
+                                            <div class="amt ml-10">
+                                                <p class="text-sm font-semibold tracking-wide leading-tight font-black text-black-500" style="color: black">NGN 38,000.00</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="flex mb-5">
+                                            <p class="text-sm tracking-wide leading-tight text-gray-500">Pledge total</p>
+                                            <div class="amt ml-24">
+                                                <p class="text-sm font-semibold tracking-wide leading-tight font-black text-black-500" style="color: black">NGN 48,000.00</p>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
                             </div>
                         </div>
 

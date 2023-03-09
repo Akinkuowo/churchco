@@ -576,3 +576,111 @@ function myFunction() {
     bad.classList.remove("text-purple-500")
     inp.classList.add("text-purple-500")
   }
+
+  const handleLeaders = ()=>{
+    const leader = document.getElementById("leader")
+    const user_member = document.getElementById("user_member")
+    const guest = document.getElementById("guest")
+   
+    
+    // const pop_up = document.getElementById("pop-up")
+
+    leader.classList.add("visible")
+    leader.classList.remove("hidden")
+    user_member.classList.remove("visible")
+    user_member.classList.add("hidden")
+    guest.classList.remove("visible")
+    guest.classList.add("hidden")
+    // pro.classList.remove("text-purple-500")
+    // use.classList.remove("text-purple-500")
+    // loc.classList.remove("text-purple-500")
+    // acc.classList.remove("text-purple-500")
+    // bad.classList.remove("text-purple-500")
+    // inp.classList.add("text-purple-500")
+  }
+
+  const handleUsermembers = ()=>{
+    const leader = document.getElementById("leader")
+    const user_member = document.getElementById("user_member")
+    const guest = document.getElementById("guest")
+   
+    
+    // const pop_up = document.getElementById("pop-up")
+
+    leader.classList.remove("visible")
+    leader.classList.add("hidden")
+    user_member.classList.add("visible")
+    user_member.classList.remove("hidden")
+    guest.classList.remove("visible")
+    guest.classList.add("hidden")
+    // pro.classList.remove("text-purple-500")
+    // use.classList.remove("text-purple-500")
+    // loc.classList.remove("text-purple-500")
+    // acc.classList.remove("text-purple-500")
+    // bad.classList.remove("text-purple-500")
+    // inp.classList.add("text-purple-500")
+  }
+
+  const handleGuest = ()=>{
+    const leader = document.getElementById("leader")
+    const user_member = document.getElementById("user_member")
+    const guest = document.getElementById("guest")
+   
+    
+    // const pop_up = document.getElementById("pop-up")
+
+    leader.classList.remove("visible")
+    leader.classList.add("hidden")
+    user_member.classList.remove("visible")
+    user_member.classList.add("hidden")
+    guest.classList.add("visible")
+    guest.classList.remove("hidden")
+    // pro.classList.remove("text-purple-500")
+    // use.classList.remove("text-purple-500")
+    // loc.classList.remove("text-purple-500")
+    // acc.classList.remove("text-purple-500")
+    // bad.classList.remove("text-purple-500")
+    // inp.classList.add("text-purple-500")
+  }
+
+  const handleGivingPresets = ()=>{
+    const giving = document.getElementById("giving")
+    const overview = document.getElementById("overview")
+    // const guest = document.getElementById("guest")
+   
+    
+    // const pop_up = document.getElementById("pop-up")
+
+    giving.classList.add("visible")
+    giving.classList.remove("hidden")
+    overview.classList.remove("visible")
+    overview.classList.add("hidden")
+   
+    // pro.classList.remove("text-purple-500")
+    // use.classList.remove("text-purple-500")
+    // loc.classList.remove("text-purple-500")
+    // acc.classList.remove("text-purple-500")
+    // bad.classList.remove("text-purple-500")
+    // inp.classList.add("text-purple-500")
+  }
+
+  const handleAccountOverview = ()=>{
+    const giving = document.getElementById("giving")
+    const overview = document.getElementById("overview")
+    // const guest = document.getElementById("guest")
+   
+    
+    // const pop_up = document.getElementById("pop-up")
+
+    giving.classList.remove("visible")
+    giving.classList.add("hidden")
+    overview.classList.add("visible")
+    overview.classList.remove("hidden")
+   
+    // pro.classList.remove("text-purple-500")
+    // use.classList.remove("text-purple-500")
+    // loc.classList.remove("text-purple-500")
+    // acc.classList.remove("text-purple-500")
+    // bad.classList.remove("text-purple-500")
+    // inp.classList.add("text-purple-500")
+  }
